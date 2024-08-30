@@ -1,0 +1,127 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('./gambar/background.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Arial', sans-serif;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    animation: fadeInBackground 1s ease-in-out;
+}
+
+.login-content {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Untuk dukungan browser Safari */
+    animation: fadeInContent 1s ease-in-out;
+}
+
+.logo img {
+    width: 80px;
+    margin-bottom: 5px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #fff;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+    text-align: left;
+    color: #fff;
+}
+
+.input-group label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: block;
+    color: #fff;
+}
+
+.input-group input {
+    width: 90%;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    color: #000;
+}
+
+.input-group select {
+    width: 100%;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    color: #000;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: #333;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #007BFF;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.back-button {
+    margin-top: 20px;
+    background-color: #007BFF;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}
+
+.error-message {
+    margin-top: 20px;
+    color: red;
+    font-size: 14px;
+}
+
+@keyframes fadeInBackground {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInContent {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

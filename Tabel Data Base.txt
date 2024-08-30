@@ -1,0 +1,65 @@
+Admin
+
+CREATE TABLE data_benih_masuk (
+    no INT AUTO_INCREMENT PRIMARY KEY,
+    kode_benih VARCHAR(20) NOT NULL,
+    jenis_benih VARCHAR(100) NOT NULL,
+    jumlah_tersedia INT NOT NULL,
+    tanggal_benih_masuk DATE NOT NULL
+);
+
+CREATE TABLE data_pembelian_benih (
+    no INT AUTO_INCREMENT PRIMARY KEY,
+    kode_benih VARCHAR(20) DEFAULT NULL,
+    jenis_benih VARCHAR(100) NOT NULL,
+    jumlah_dibeli INT NOT NULL,
+    tanggal_pembelian DATE NOT NULL,
+    harga DECIMAL(10, 2) NOT NULL,
+    total DECIMAL(10, 2) DEFAULT NULL
+);
+
+CREATE TABLE data_persediaan (
+    no INT AUTO_INCREMENT PRIMARY KEY,
+    jenis_benih VARCHAR(100) NOT NULL,
+    stok INT DEFAULT 0
+);
+
+CREATE TABLE transaksi_penjualan (
+    no INT AUTO_INCREMENT PRIMARY KEY,
+    nama VARCHAR(100) NOT NULL,
+    jenis_benih VARCHAR(100) NOT NULL,
+    jumlah_dibeli DECIMAL(10, 2) NOT NULL,
+    harga DECIMAL(10, 2) NOT NULL,
+    total DECIMAL(10, 2) NOT NULL,
+    tanggal_pemesanan DATE NOT NULL,
+    status ENUM('selesai', 'belum selesai') NOT NULL DEFAULT 'belum selesai'
+);
+
+Kepala
+
+CREATE TABLE laporan_bulan_bm (
+    no INT AUTO_INCREMENT PRIMARY KEY,
+    jenis_benih VARCHAR(255) NOT NULL,
+    sisa INT NOT NULL,
+    keluar INT NOT NULL,
+    stok INT NOT NULL,
+    tanggal DATE NOT NULL
+);
+
+CREATE TABLE laporan_bulan_pb (
+    no INT AUTO_INCREMENT PRIMARY KEY,
+    jenis_benih VARCHAR(100) NOT NULL,
+    sisa INT NOT NULL,
+    keluar INT NOT NULL,
+    jumlah_dibeli INT NOT NULL,
+    tanggal DATE NOT NULL,
+    total DECIMAL(10, 2) NOT NULL
+);
+
+CREATE TABLE laporan_transaksi_bulan (
+    no INT AUTO_INCREMENT PRIMARY KEY,
+    jenis_benih VARCHAR(255) NOT NULL,
+    jumlah_dibeli INT NOT NULL,
+    total DECIMAL(10, 2) NOT NULL,
+    tanggal DATE NOT NULL
+);
